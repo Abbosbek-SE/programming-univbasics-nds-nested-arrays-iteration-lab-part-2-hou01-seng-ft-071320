@@ -1,18 +1,14 @@
-
 def find_min_in_nested_arrays(src)
-  result = []
-  i = 0
-  while i < src.length do 
-    j = 0 
-    low_temp = 1000
-    while j < src[i].length do
-      if src[i][j] < low_temp
-        low_temp = src[i][j]
-      end
-      j += 1 
-    end
-    result << low_temp
-    i += 1 
-  end
-  return result
-end
+ result = []
+ i = 0 
+ for i in src do
+   low_temp = 1000
+   for j in i do
+     if low_temp > j 
+       low_temp = j
+     end
+   end
+   result << low_temp
+ end
+ return result
+ end
